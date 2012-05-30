@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AccountMasterPage.master.cs" Inherits="AccountMasterPage" %>
+<%@ Register Src="ControlLogin.ascx" TagName="ControlLogin" TagPrefix="uc1" %>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ONLINE KITCHEN</title>
+<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<form runat="server" id="HV">
+<table bgcolor="white" width="950" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" bgcolor="#6666FF">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+            height="100" width="960">
+            <param name="movie" value="Flash/test2.swf">
+            <param name="quality" value="high">
+            <embed height="100" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high"
+                src="Flash/test2.swf" type="application/x-shockwave-flash" width="960"></embed>
+        </object>
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="#99FF00"><table width="100%" border="0" cellpadding="5" cellspacing="0">
+      <tr>
+        <th>Account <a href="Default.aspx">Home Page </a></th>            
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td colspan="2" valign="top">
+                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+                    height="150" width="100%">
+                    <param name="movie" value="Flash/banner.swf">
+                    <param name="quality" value="high">
+                    <embed height="150" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high"
+                        src="Flash/banner.swf" type="application/x-shockwave-flash" width="100%"></embed>
+                </object>
+                <a href="Flash/banner.swf"><span style="text-decoration: underline"></span></a>
+            </td>
+            <td rowspan="2" valign="top" width="200">
+                <table width="100%" border="1" align="center" cellpadding="10" cellspacing="0">
+          <tr>
+            <td bgcolor="#CCFF00">
+                &nbsp;<uc1:ControlLogin ID="ControlLogin1" runat="server" />
+            </td>
+          </tr>
+            <tr>
+                <td bgcolor="#ffff66">
+                    &nbsp;</td>
+            </tr>
+          <tr>
+            <td bgcolor="#FF9999">
+                &nbsp;</td>
+          </tr>
+          <tr>
+            <th height="150" bgcolor="#CC99CC">Adrotator</th>
+          </tr>
+        </table>
+            </td>
+        </tr>
+      <tr>
+        <td width="200" valign="top"><table width="100%" border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <td align="center" bgcolor="Red">
+                    &nbsp;</td>
+            </tr>
+          <tr>
+            <td bgcolor="#00FF00">&nbsp;</td>
+          </tr>
+          <tr>
+            <td bgcolor="#00FFFF"></td>
+          </tr>
+          <tr>
+            <td valign="top" bgcolor="#99FF00">
+                &nbsp;</td>
+          </tr>
+          <tr>
+            <td bgcolor="#99FFCC">&nbsp;</td>
+          </tr>
+        </table></td>
+        <td valign="top"><table width="100%" border="1" cellspacing="0" cellpadding="10">
+          <tr>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td bgcolor="#CCFF00"><table border="0" align="center" cellpadding="5" cellspacing="0">
+      <tr>
+        <td align="center"><a href="">Home Page </a></td>
+        <td align="center"><a href="">About Us </a></td>
+        <td align="center"><a href="">Contact Us </a></td>
+        <td align="center"><a href="">Feedback</a></td>
+        <td align="center"><a href="">My Account </a></td>
+        <td align="center">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,112 +1,94 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AccountMasterPage.master.cs" Inherits="AccountMasterPage" %>
-<%@ Register Src="ControlLogin.ascx" TagName="ControlLogin" TagPrefix="uc1" %>
+<%@ Register Src="ControlLogin.ascx" TagName="ControlLogin" TagPrefix="conlog" %>
 
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ONLINE KITCHEN</title>
-<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
-</head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ONLITE KITCHEN</title>
+<link rel="stylesheet"  type="text/css" href="style.css" />
+</head> 
 <body>
-<form runat="server" id="HV">
-<table bgcolor="white" width="950" border="1" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" bgcolor="#6666FF">
-        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
-            height="100" width="960">
-            <param name="movie" value="Flash/test2.swf">
-            <param name="quality" value="high">
-            <embed height="100" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high"
-                src="Flash/test2.swf" type="application/x-shockwave-flash" width="960"></embed>
-        </object>
-    </td>
-  </tr>
-  <tr>
-    <td bgcolor="#99FF00"><table width="100%" border="0" cellpadding="5" cellspacing="0">
-      <tr>
-        <th>Account <a href="Default.aspx">Home Page </a></th>            
-      </tr>
-    </table></td>
-  </tr>
-  <tr>
-    <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-            <td colspan="2" valign="top">
-                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
-                    height="150" width="100%">
-                    <param name="movie" value="Flash/banner.swf">
-                    <param name="quality" value="high">
-                    <embed height="150" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high"
-                        src="Flash/banner.swf" type="application/x-shockwave-flash" width="100%"></embed>
-                </object>
-                <a href="Flash/banner.swf"><span style="text-decoration: underline"></span></a>
-            </td>
-            <td rowspan="2" valign="top" width="200">
-                <table width="100%" border="1" align="center" cellpadding="10" cellspacing="0">
-          <tr>
-            <td bgcolor="#CCFF00">
-                &nbsp;<uc1:ControlLogin ID="ControlLogin1" runat="server" />
-            </td>
-          </tr>
-            <tr>
-                <td bgcolor="#ffff66">
-                    &nbsp;</td>
-            </tr>
-          <tr>
-            <td bgcolor="#FF9999">
-                &nbsp;</td>
-          </tr>
-          <tr>
-            <th height="150" bgcolor="#CC99CC">Adrotator</th>
-          </tr>
-        </table>
-            </td>
-        </tr>
-      <tr>
-        <td width="200" valign="top"><table width="100%" border="1" cellspacing="0" cellpadding="10">
-            <tr>
-                <td align="center" bgcolor="Red">
-                    &nbsp;</td>
-            </tr>
-          <tr>
-            <td bgcolor="#00FF00">&nbsp;</td>
-          </tr>
-          <tr>
-            <td bgcolor="#00FFFF"></td>
-          </tr>
-          <tr>
-            <td valign="top" bgcolor="#99FF00">
-                &nbsp;</td>
-          </tr>
-          <tr>
-            <td bgcolor="#99FFCC">&nbsp;</td>
-          </tr>
-        </table></td>
-        <td valign="top"><table width="100%" border="1" cellspacing="0" cellpadding="10">
-          <tr>
-            <td>
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </td>
-          </tr>
-        </table></td>
-      </tr>
-    </table></td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCFF00"><table border="0" align="center" cellpadding="5" cellspacing="0">
-      <tr>
-        <td align="center"><a href="">Home Page </a></td>
-        <td align="center"><a href="">About Us </a></td>
-        <td align="center"><a href="">Contact Us </a></td>
-        <td align="center"><a href="">Feedback</a></td>
-        <td align="center"><a href="">My Account </a></td>
-        <td align="center">&nbsp;</td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
+<form runat="server">
+<div id="main_content">
+		<div id="top_banner">
+       		<div id="left_logo"><a href="default.aspx"><img src="images/logo.gif" border="0" alt="logo" /></a></div>
+        </div>        
+        <div id="page_content">
+                <div class='cssmenu'>
+                <ul>
+                <li class='active'><a href='default.aspx'><span>Home</span></a></li>
+                <li><a href='ManagerPersonalOrder.aspx'><span>Order Manager</span></a>
+                    <ul>
+                    <li><a href='MakePersonalOrder.aspx'><span>Make an personal order</span></a></li>
+                    <li><a href='EditPersonalOrder.aspx'><span>Edit personal orders</span></a></li>
+                    
+                    </ul>
+                </li>
+                    <li><a href=''><span>View History</span></a>
+                    <ul>
+                        <li><a href='OrderHistory.aspx'><span>View order history</span></a></li>                        
+                    </ul>
+                  </li>                 
+               </ul>
+                </div>               
+                <br />
+                
+                <div id="left_section">
+                	<div class="title">Welcome to Account Panel</div>
+                    
+                    <div class="text_content">
+                    
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    
+                    </div>
+           
+                </div>
+                <div id="right_section">
+                
+                	
+                    <div class="text_content2">           
+                       <conlog:ControlLogin ID = "ControlLogin1" runat="server" />
+                    </div>
+                    <div class="title2">Latest News</div>   
+                    
+                    <div class="read_more_box">
+                    <a href="#"><img src="images/read_more.gif" width="59" height="16" border="0" alt="more" class="more" /></a>
+                    </div>
+                    
+                    	<div id="custom">
+                        <a href="#"><img src="images/custom.gif" width="227" height="92" border="0" alt="more" class="more" /></a>
+                        </div>
+                    
+                    <div class="title2">Testimonials</div>
+                    <div class="text_content2">
+                    
+                    </div>
+                    <div class="read_more_box">
+                    <a href="#"><img src="images/read_more.gif" width="59" height="16" border="0" alt="more" class="more" /></a>
+                    </div>                                                    		
+                </div>
+        
+<div class="clear"></div>
+</div>
+<div id="footer">
+		<div class="footer_links">
+                 <a href="#" title="">home </a>
+                <a href="#" title="">about us </a>
+                <a href="#" title="">services</a>
+                <a href="#" title="">contact us</a>       
+        </div>
+    	<div class="copyright">
+        
+        </div>
+</div>
+
+
+
+	
+</div>
 </form>
 </body>
 </html>

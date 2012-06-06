@@ -11,14 +11,9 @@ using System.Web.UI.HtmlControls;
 
 public partial class AccountMasterPage : System.Web.UI.MasterPage
 {
+    
     protected void Page_Load(object sender, EventArgs e)
     {
-       /* DataTable table = (DataTable)Session["ThanhVien"];            
-        if (table == null)
-            Response.Redirect("~/Login.aspx");
-    
-        int Type = (int)table.Rows[0]["userType"];
-        if (Type != 1) Response.Redirect("~/Login.aspx");
-        */
+        
     } 
 }

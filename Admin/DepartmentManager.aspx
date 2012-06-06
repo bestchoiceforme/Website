@@ -1,14 +1,18 @@
 <%@ Page Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="DepartmentManager.aspx.cs" Inherits="_DepartmentManager" Title="Department Manager" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
     <asp:MultiView ID="MultiView1" runat="server">
         <asp:View ID="View1" runat="server">
+        <fieldset>
+        <legend>Departments Information</legend>
             <asp:GridView ID="GridView1" runat="server" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="100%" AutoGenerateColumns="False">
                 <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
-                <Columns>
-                    <asp:CommandField ShowSelectButton="True" />
-                    <asp:CommandField ShowDeleteButton="True" />
+                <Columns>                    
                     <asp:BoundField DataField="departID" HeaderText="DepartID" />
-                    <asp:BoundField DataField="name" HeaderText="Name" />                  
+                    <asp:BoundField DataField="name" HeaderText="Name" />  
+                    <asp:BoundField DataField="description" HeaderText="Description" />  
+                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:CommandField ShowDeleteButton="True" />                
                 </Columns>
                 <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                 <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
@@ -16,10 +20,12 @@
                 <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
                 <AlternatingRowStyle BackColor="Gainsboro" />
             </asp:GridView>
+            
         </asp:View>
+         </fieldset>
         <asp:View ID="View2" runat="server">
             <fieldset>
-                <legend>Customer Edition</legend>
+                <legend>Department Edition</legend>
                 <table align="center" border="0" cellpadding="5" cellspacing="0">
                     <tr>
                         <td>
@@ -38,6 +44,15 @@
                         <td>
                             &nbsp;<asp:TextBox ID="txtName" runat="server" Width="300px"></asp:TextBox></td>
                     </tr>
+                     <tr>
+                        <td>
+                            Description
+                        </td>
+                        <td>
+                            :</td>
+                        <td>
+                            &nbsp;<asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" Width="300px"></asp:TextBox></td>
+                    </tr>
                     <tr>
                         <td>
                             &nbsp;</td>
@@ -53,5 +68,5 @@
             </fieldset>
         </asp:View>
     </asp:MultiView>
+   
 </asp:Content>
-

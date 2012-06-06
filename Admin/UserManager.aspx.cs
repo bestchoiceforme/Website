@@ -69,12 +69,13 @@ public partial class UserManager : System.Web.UI.Page
 
     protected void btnUpdate_Click(object sender, EventArgs e)
     {
-        String Sql = "UPDATE [User] SET [departID] = @departID, [fullname]=@fullname,[password]=@password WHERE userID=@userID";
+        String Sql = "UPDATE [User] SET [departID] = @departID, [fullname]=@fullname,[password]=@password,[userType]=@userType WHERE userID=@userID";
         Database.ExecuteNonQuery(Sql,
             "@userID", txtUserID.Text,
             "@fullname", txtFullName.Text,
             "@departID", DropDownListDepart.SelectedValue,
-            "@password", txtPassword.Text);
+            "@password", txtPassword.Text,
+            "userType", dropDownListUserType.SelectedValue);
     }
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)

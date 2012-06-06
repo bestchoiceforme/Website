@@ -37,11 +37,12 @@ public partial class _DepartmentManager : System.Web.UI.Page
 
     void DisplayEdit(String departID)
     {
-        String Sql = "SELECT * FROM [Depart] WHERE [departID]=@CustomerID";
-        DataTable User = Database.GetData(Sql, "@CustomerID", departID);
+        String Sql = "SELECT * FROM [Depart] WHERE [departID]=@departID";
+        DataTable User = Database.GetData(Sql, "@departID", departID);
 
         txtDepartID.Text = User.Rows[0]["departID"].ToString();
-        txtName.Text = User.Rows[0]["name"].ToString();        
+        txtName.Text = User.Rows[0]["name"].ToString();
+        txtDescription.Text = User.Rows[0]["description"].ToString();        
 
         MultiView1.ActiveViewIndex = 1;
     }
@@ -50,9 +51,9 @@ public partial class _DepartmentManager : System.Web.UI.Page
     {
         try
         {
-            String CustomerID = GridView1.SelectedRow.Cells[2].Text;
+            String departID = GridView1.SelectedRow.Cells[0].Text;
 
-            this.DisplayEdit(CustomerID);
+            this.DisplayEdit(departID);
         }
         catch (Exception ex)
         {
@@ -67,9 +68,9 @@ public partial class _DepartmentManager : System.Web.UI.Page
 
     protected void btnUpdate_Click(object sender, EventArgs e)
     {
-        String Sql = "UPDATE [Depart] SET [name]=@name WHERE [departID] = @departID";
+        String Sql = "UPDATE [Depart] SET [name]=@name, [description] = @description WHERE [departID] = @departID";
         Database.ExecuteNonQuery(Sql,
-            "@name", txtName.Text, "@departID", txtDepartID.Text);
+            "@name", txtName.Text, "@departID", txtDepartID.Text, "@description",txtDescription.Text);
     }
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)

@@ -1,91 +1,94 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="AdminMasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="AdminMasterPage" %>
 <%@ Register Src="ControlLogin.ascx" TagName="ControlLogin" TagPrefix="conlog" %>
-<%@ Register Src="AdminMenu.ascx" TagName="AdminMenu" TagPrefix="admenu" %>
-<%@ Register Src="Navigation.ascx" TagName="Navigation" TagPrefix="navi" %>
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ONLINE KITCHEN</title>
-<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
-
-   
-    <style type="text/css">
-        .style1
-        {
-            height: 24px;
-        }
-    </style>
-
-   
-</head>
-
-<body>
-<form runat="server" id="main">
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-  <title></title>
+<title>ONLITE KITCHEN</title>
+<link rel="stylesheet"  type="text/css" href="style.css" />
 </head>
 <body>
-<table style="text-align: left; width: 100%;" border="0"
- cellpadding="2" cellspacing="2">
-  <tbody>
-    <tr>
-      <td class="header" colspan="3" rowspan="1"><h1>ADMIN PANEL</h1></td>
-    </tr>
-    <tr>
-      <td colspan="3" rowspan="1" class="style1"></td>
-    </tr>
-    <tr>
-      <td width="20%" height="500px" align="left">
-      <table style="text-align: left; margin-top:auto; width: 100%;"
- border="0" cellpadding="1" cellspacing="1">
-        <tbody>        
-          <tr>
-            <td>
-                <navi:Navigation ID="AdminMenu2" runat="server" EnableTheming="True" 
-                    EnableViewState="True" />
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      </td>
-      <td>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-      </td>
-      <td width="20%">
-      <table style="text-align: left; width: 100%;"
- border="1" cellpadding="2" cellspacing="2">
-        <tbody>
-          <tr>
-            <td class="loginDisplay">  
-                    <conlog:controllogin ID="ControlLogin1" runat="server" />
-              </td>
-          </tr>
-          <tr>
-            <td>Time</td>
-          </tr>
-          <tr>
-            <td>Out</td>
-          </tr>
-        </tbody>
-      </table>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3" rowspan="1"></td>
-    </tr>
-  </tbody>
-</table>
-</body>
-</html>
-  
+<form runat="server">
+<div id="main_content">
+		<div id="top_banner">
+       		<div id="left_logo"><a href="default.aspx"><img src="images/logo.gif" border="0" alt="logo" /></a></div>
+        </div>
+        
+        <div id="page_content">
+                <div class='cssmenu'>
+                <ul>
+                <li class='active'><a href='default.aspx'><span>Home</span></a></li>
+                <li><a href='UserManager.aspx'><span>User Manager</span></a>
+                    <ul>
+                    <li><a href='Register.aspx'><span>Add new user</span></a></li>
+                    <li><a href='UserManager.aspx'><span>User Manager</span></a></li>
+                    </ul>
+                </li>
+                    <li><a href='DepartmentManager.aspx'><span>Department Manager</span></a>
+                    <ul>
+                        <li><a href='NewDepartment.aspx'><span>Add new department</span></a></li>
+                    </ul>
+                  </li>
+                 <li><a href='PriceManager.aspx'><span>Price Manager</span></a></li>
+               </ul>
+                </div>               
+                <br />
+                
+                <div id="left_section">
+                	<div class="title">Welcome to Admin Panel</div>
+                    
+                    <div class="text_content">
+                    
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    
+                    </div>
+           
+                </div>
+                <div id="right_section">
+                
+                	
+                    <div class="text_content2">           
+                       <conlog:ControlLogin ID = "ControlLogin1" runat="server" />
+                    </div>
+                    <div class="title2">Latest News</div>   
+                    
+                    <div class="read_more_box">
+                    <a href="#"><img src="images/read_more.gif" width="59" height="16" border="0" alt="more" class="more" /></a>
+                    </div>
+                    
+                    	<div id="custom">
+                        <a href="#"><img src="images/custom.gif" width="227" height="92" border="0" alt="more" class="more" /></a>
+                        </div>
+                    
+                    <div class="title2">Testimonials</div>
+                    <div class="text_content2">
+                    
+                    </div>
+                    <div class="read_more_box">
+                    <a href="#"><img src="images/read_more.gif" width="59" height="16" border="0" alt="more" class="more" /></a>
+                    </div>                                                    		
+                </div>
+        
+<div class="clear"></div>
+</div>
+<div id="footer">
+		<div class="footer_links">
+                 <a href="#" title="">home </a>
+                <a href="#" title="">about us </a>
+                <a href="#" title="">services</a>
+                <a href="#" title="">contact us</a>       
+        </div>
+    	<div class="copyright">
+        
+        </div>
+</div>
 
+
+
+	
+</div>
 </form>
 </body>
 </html>

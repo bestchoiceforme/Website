@@ -3,7 +3,7 @@
     <legend>Profile</legend>
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
         <asp:View ID="View1" runat="server">
-        <table border="0" cellpadding="2" cellspacing="0" width="100%">
+        <table border="0" cellpadding="2" cellspacing="2" width="100%">
             <tr>
                 <td>
                     User ID:</td>
@@ -25,8 +25,6 @@
                 <td align="right">
                     <asp:Button ID="btnSignIn" runat="server" Text="Sign In" OnClick="btnSignIn_Click" /></td>
             </tr>           
-            <tr>                
-            </tr>
             <tr>
                 <td align="center">
 
@@ -37,20 +35,18 @@
         <asp:View ID="View2" runat="server">
         <table border="0" cellpadding="2" cellspacing="0" width="100%">
             <tr>
-                <th>
-                    <asp:Image ID="Image1" runat="server" BorderStyle="Inset" BorderWidth="1px" Height="120px"
-                        Width="100px" /><br />
-                    <asp:Label ID="lblFullname" runat="server" Text="Label"></asp:Label></th>
+                <td>
+                    <asp:Label ID="lblFullname" runat="server" Text="Label"></asp:Label></td>
             </tr>
             <tr>
-                <th>
+                <td>
                     <asp:Label ID="lblUserID" runat="server" Text="Label"></asp:Label>
-                </th>
+                </td>
             </tr>
             <tr>
                 <td align="center">
-                    [<asp:LinkButton ID="lnkSignOut" runat="server" OnClick="lnkSignOut_Click">Sign Out</asp:LinkButton>]
-                    [<a href="MyAccount.aspx">Edit Profile</a>]
+                    <asp:LinkButton ID="lnkSignOut" runat="server" OnClick="lnkSignOut_Click">[Sign Out]</asp:LinkButton>
+                    <a href="MyAccount.aspx">[Edit]</a>
                 </td>
             </tr>
         </table>

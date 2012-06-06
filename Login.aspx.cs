@@ -25,8 +25,8 @@ public partial class Login : System.Web.UI.Page
             int Type = (int)table.Rows[0]["userType"];
             switch (Type)
             {
-                
-                case 0:                   
+
+                case 0:
                     Session["Role"] = "Admin";
                     FormsAuthentication.SetAuthCookie(Session["Role"].ToString(), true);
                     Response.Redirect("~/Admin/default.aspx"); break;
@@ -43,11 +43,11 @@ public partial class Login : System.Web.UI.Page
                     Response.Redirect("~/Chef/default.aspx"); break;
             }
             FormsAuthentication.SetAuthCookie(Session["Role"].ToString(), true);
-                   
+
         }
         else
-        {            
-            lbError.Text = "Dang nhap that bai !";
+        {
+            //lbError.Text = "Dang nhap that bai !";
         }
     }
 }

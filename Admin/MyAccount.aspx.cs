@@ -58,7 +58,7 @@ public partial class Admin_MyAccount : System.Web.UI.Page
                     "@FullName", txtFullName.Text,
                     "@Password", txtPassword.Text,
                     "@departID", DropDownListDepart.SelectedValue);
-            DataTable table = Account.UserSession(txtUserID.Text, txtPassword.Text);
+            DataTable table = Database.UserSession(txtUserID.Text, txtPassword.Text);
             Session["ThanhVien"] = table;
 
             lblError.Text = "Cập nhật thành công !";

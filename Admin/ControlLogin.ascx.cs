@@ -62,8 +62,9 @@ public partial class ControlLogin : System.Web.UI.UserControl
     }
 
     protected void lnkSignOut_Click(object sender, EventArgs e)
-    {
-        Session.Remove("ThanhVien");
+    {        
+        Session.RemoveAll();
+        FormsAuthentication.SignOut();
        /* ShoppingCart Cart = (ShoppingCart)Session["ShoppingCart"];
         Cart.Clear();*/
         Response.Redirect("~/Login.aspx");

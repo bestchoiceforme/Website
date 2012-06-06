@@ -9,11 +9,16 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-public partial class MyAccount : System.Web.UI.Page
+public partial class Account_MyAccount : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        this.DisplayAccount();
+        if (!IsPostBack)
+        {
+            string script = "return confirm('Are you sure')";
+            btnUpdate.OnClientClick = script;
+            this.DisplayAccount();
+        }
        // this.DisplayOrders();
     }
 
@@ -34,30 +39,43 @@ public partial class MyAccount : System.Web.UI.Page
     {
         DataTable table = (DataTable)Session["ThanhVien"];
 
-        txtCustomerID.Text = (String)table.Rows[0]["userID"];
-   
+        txtUserID.Text = (String)table.Rows[0]["userID"];        
         txtFullName.Text = (String)table.Rows[0]["fullname"];
-        txtPassword.Text = (String)table.Rows[0]["password"];    
+        txtPassword.Text = (String)table.Rows[0]["password"];
+        DropDownListDepart.SelectedValue = table.Rows[0]["departID"].ToString();
+        
     }
 
-
+    /// <summary>
+    /// UPdate information about user
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btnUpdate_Click(object sender, EventArgs e)
-    {
-        String sql = "UPDATE Customers SET fullName=@FullName, password=@Password WHERE userID=@userID";
+    {               
+
+
+        String sql = "UPDATE [User] SET fullName=@FullName, password=@Password, departID=@departID WHERE userID=@userID";
         try
         {
             Database.ExecuteNonQuery(sql,
-                    "@CustomerID", txtCustomerID.Text,
+                    "@userID", txtUserID.Text,
                     "@FullName", txtFullName.Text,
-                // "@Address", txtAddress.Text,
-                //  "@Email", txtEmail.Text,
-                    "@Password", txtPassword.Text);
-                  //  "@Phone", txtPhone.Text);
+                    "@Password", txtPassword.Text,
+                    "@departID", DropDownListDepart.SelectedValue);
+            DataTable table = Database.UserSession(txtUserID.Text, txtPassword.Text);
+            Session["ThanhVien"] = table;
+
             lblError.Text = "Cập nhật thành công !";
         }
         catch (Exception ex)
         {
             lblError.Text = ex.Message;
         }
+    }
+    protected void btChangePassword_Click(object sender, EventArgs e)
+    {
+        txtPassword.Text = "";
+        txtPassword.Enabled = true;
     }
 }

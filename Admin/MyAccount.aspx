@@ -1,8 +1,5 @@
 <%@ Page Language="C#" MasterPageFile="~/Admin/AdminMasterPage.master" AutoEventWireup="true" CodeFile="MyAccount.aspx.cs" Inherits="Admin_MyAccount" Title="Edit User Profile" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <table border="0" cellpadding="10" cellspacing="0" width="100%">
-        <tr>
-            <td>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">    
                 <fieldset>                    
                 <legend>User Edition</legend>
                 <table align="center" border="0" cellpadding="5" cellspacing="0">
@@ -90,7 +87,6 @@
                     <asp:Label ID="lblError" CssClass="failureNotification" runat="server" Visible="true"> </asp:Label>
                     </tr>
                 </table>
-            </fieldset>
-    </table>
+            </fieldset>    
 </asp:Content>
 

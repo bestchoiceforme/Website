@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <fieldset class="register">
-    <ContentTemplate>
                     <h2>
                         Create a New Account
                     </h2>
@@ -81,8 +80,7 @@
                         <p>
                             <asp:Label ID = "lbOk" Text="New user is added!" runat="server" CssClass="title" Visible="false"></asp:Label>
                         </p>
-                    </div>
-                </ContentTemplate>
+                    </div>               
     </fieldset>
    
    

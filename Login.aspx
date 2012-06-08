@@ -15,7 +15,7 @@
 		
 			<legend>Log in</legend>
 			
-			<label for="txtUserID">Email</label>
+			<label for="txtUserID">User name</label>
 			<asp:TextBox ID="txtUserID" TextMode="SingleLine" runat="server"/>
 			<div class="clear"></div>
 			
@@ -28,7 +28,7 @@
 			<div class="clear"></div>
 			<br />
 			
-                <asp:Button ID="btnLogin" runat="server" Text="Button" 
+                <asp:Button ID="btnLogin" runat="server" Text="Login" 
                 onclick="btnLogin_Click" CssClass="button" />
 			        
 		</fieldset>

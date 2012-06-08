@@ -87,7 +87,7 @@ public static class Database
 
     public static DataTable UserSession(String userID, String password)
     {
-        String sql = "SELECT * FROM [User] WHERE [userID]=@userID AND [password] = @password";
+        String sql = "SELECT * FROM [Account] WHERE [userID]=@userID AND [password] = @password";
         DataTable table = Database.GetData(sql, "@userID", userID, "@password", password);
 
         return table;
@@ -96,7 +96,7 @@ public static class Database
 
     public static DataTable UserSession(String userID)
     {
-        String sql = "SELECT * FROM [User] WHERE [userID]=@userID";
+        String sql = "SELECT * FROM [Account] WHERE [userID]=@userID";
         DataTable table = Database.GetData(sql, "@userID", userID);
         return table;
     }
@@ -137,5 +137,16 @@ public static class Database
 
         return check;
     }
-    
+    public static DataSet GetHistoryOrderPerUser(String ownerID)
+    { 
+        SqlConnection sqlcon = new  SqlConnection(ConnectionString);
+
+        SqlCommand sqlcommand = new SqlCommand("HistoryOrderOfUser", sqlcon);
+        sqlcommand.CommandType = CommandType.StoredProcedure;        
+        sqlcommand.Parameters.Add("@ownerID", SqlDbType.Char).Value=ownerID;
+        SqlDataAdapter adapter = new SqlDataAdapter(sqlcommand);
+        DataSet result = new DataSet();
+        adapter.Fill(result);
+        return result;
+    }
 }

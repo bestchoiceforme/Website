@@ -19,12 +19,11 @@ public partial class Account_Default2 : System.Web.UI.Page
     {
         DataTable table = (DataTable)Session["ThanhVien"];
 
-        String userID =  (String)table.Rows[0]["userID"]; 
-        String Sql = "SELECT [orderDay],[createTime],[modTime],[fastNum],[lunNum],[dinNum],[createrID] FROM [Order] WHERE [ownerID] = @userID";
+        String userID =  (String)table.Rows[0]["userID"];
+        DataSet result = Database.GetHistoryOrderPerUser(userID);       
 
-        DataTable Depart = Database.GetData(Sql, "@userID", userID);
 
-        GridView1.DataSource = Depart;
+        GridView1.DataSource = table;
         GridView1.DataBind();
 
         //MultiView1.ActiveViewIndex = 0;

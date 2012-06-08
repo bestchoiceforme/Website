@@ -50,7 +50,7 @@ public partial class Admin_MyAccount : System.Web.UI.Page
         string script = "return confirm('Are you sure')";
 
 
-        String sql = "UPDATE [User] SET fullName=@FullName, password=@Password, departID=@departID WHERE userID=@userID";
+        String sql = "UPDATE [Account] SET fullName=@FullName, password=@Password, departID=@departID WHERE userID=@userID";
         try
         {
             Database.ExecuteNonQuery(sql,

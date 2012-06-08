@@ -12,7 +12,7 @@ public partial class Admin_Register : System.Web.UI.Page
     }
     protected void CreateUserButton_Click(object sender, EventArgs e)
     {
-        String Sql = "INSERT INTO [User] ([userID], [password], [fullname], [departID], [userType]) VALUES (@userID, @password, @fullname, @departID, @userType)";
+        String Sql = "INSERT INTO [Account] ([userID], [password], [fullname], [departID], [userType]) VALUES (@userID, @password, @fullname, @departID, @userType)";
         try
         {
             int check = Database.ExecuteNonQuery(Sql,

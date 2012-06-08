@@ -36,7 +36,7 @@ public partial class ControlLogin : System.Web.UI.UserControl
 
     protected void btnSignIn_Click(object sender, EventArgs e)
     {
-        String sql = "SELECT * FROM [User] WHERE [userID]=@a AND [password]=@b";
+        String sql = "SELECT * FROM [Account] WHERE [userID]=@a AND [password]=@b";
         String userId = txtUserID.Text;
         String password = txtPassword.Text;
 
